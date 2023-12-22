@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="shortcut icon" href="./icon/alphacode.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="./js/main.js" defer type="module"></script>
+    <script src="./js/index.js" defer type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"crossorigin="anonymous"></script>
+    <title>Cadastro de contatos</title>
+</head>
+
+<body>
+
+    <header>
+
+        <img src="./img/logo_alphacode.png" alt="Logo alphacodee">
+
+        <h1>Cadastro de contatos</h1>
+
+    </header>
+
+    <main>
+
+        <form class="form">
+
+            <div class="container-input">
+                <input type="text" id="name" required class="container-input__input"
+                    placeholder="Ex.: Letícia Pacheco dos Santos">
+                <label for="nome">Nome</label>
+            </div>
+
+            <div class="container-input">
+                <input type="date" id="dateOfBirth" required class="container-input__input"
+                    placeholder="Ex.: 03/10/2003">
+                <label for="data_nascimento">Data de nascimento</label>
+            </div>
+
+            <div class="container-input">
+                <input type="email" id="email" required class="container-input__input"
+                    placeholder="Ex.: leticia@gmail.com">
+                <label for="email">E-mail</label>
+            </div>
+
+            <div class="container-input">
+                <input type="text" id="profession" required class="container-input__input"
+                    placeholder="Ex.: Desenvolvedora Web">
+                <label for="profissão">Profissão</label>
+            </div>
+
+            <div class="container-input">
+                <input type="text" id="telephone" required class="container-input__input"
+                    placeholder="Ex.: (11) 4033-2019">
+                <label for="telefone">Telefone para contato</label>
+            </div>
+
+            <div class="container-input">
+                <input type="text" id="cellphone" required class="container-input__input"
+                    placeholder="Ex.: (11) 98493-2039">
+                <label for="celular">Celular para contato</label>
+            </div>
+
+        </form>
+
+        <div class="container-checkbox">
+
+            <div class="container-checkbox__item">
+                <input type="checkbox" id="checkbox-whatsapp">
+                <span>Número de celular possui Whatsapp</span>
+            </div>
+
+            <div class="container-checkbox__item">
+                <input type="checkbox" id="checkbox-email">
+                <span>Enviar notificações por E-mail</span>
+            </div>
+
+            <div class="container-checkbox__item">
+                <input type="checkbox" id="checkbox-sms">
+                <span>Enviar notificações por SMS</span>
+            </div>
+
+        </div>
+
+        <div class="container-register">
+
+            <button id="register-button">Cadastrar contato</button>
+
+        </div>
+
+        <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir contato</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span>Deseja realmente excluir esse contato?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" id="buttonExcludeModal" class="btn btn-primary">Sim, excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar contato</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form-modal">
+
+                            <div class="container-input-modal">
+                                <input type="text" id="name-edit" required class="container-input__input"
+                                    placeholder="Ex.: Letícia Pacheco dos Santos">
+                                <label for="nome">Nome</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="date" id="dateOfBirth-edit" required class="container-input__input"
+                                    placeholder="Ex.: 03/10/2003">
+                                <label for="data_nascimento">Data de nascimento</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="email" id="email-edit" required class="container-input__input"
+                                    placeholder="Ex.: leticia@gmail.com">
+                                <label for="email">E-mail</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="text" id="profession-edit" required class="container-input__input"
+                                    placeholder="Ex.: Desenvolvedora Web">
+                                <label for="profissão">Profissão</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="text" id="telephone-edit" required class="container-input__input"
+                                    placeholder="Ex.: (11) 4033-2019">
+                                <label for="telefone">Telefone para contato</label>
+                            </div>
+
+                            <div class="container-input-modal">
+                                <input type="text" id="cellphone-edit" required class="container-input__input"
+                                    placeholder="Ex.: (11) 98493-2039">
+                                <label for="celular">Celular para contato</label>
+                            </div>
+
+                        </form>
+
+                        <div class="container-checkbox-modal">
+
+                            <div class="container-checkbox-modal__item">
+                                <input type="checkbox" id="checkbox-whatsapp-edit">
+                                <span>Número de celular possui Whatsapp</span>
+                            </div>
+
+                            <div class="container-checkbox-modal__item">
+                                <input type="checkbox" id="checkbox-email-edit">
+                                <span>Enviar notificações por E-mail</span>
+                            </div>
+
+                            <div class="container-checkbox-modal__item">
+                                <input type="checkbox" id="checkbox-sms-edit">
+                                <span>Enviar notificações por SMS</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" id="buttonEditModal" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-table">
+
+            <table>
+
+                <thead>
+
+                    <tr class="header-table">
+                        <th>Nome</th>
+                        <th>Data de nascimento </th>
+                        <th>E-mail</th>
+                        <th>Celular para contato</th>
+                        <th>Ações</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="body-table">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <span>Termos | Políticas</span>
+
+        <div class="container-copyright">
+
+            <span>© Copyright 2022 | Desenvolvido por</span>
+            <img src="./img/logo_rodape_alphacode.png" alt="Logo alphacodee">
+
+        </div>
+
+        <span>©Alphacode IT Solutions 2022</span>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+header img {
+    height: 16vh;
+}
+
+@media(max-width: 790px) {
+
+    header h1 {
+        font-size: 3.2vh;
+    }
+
+}

@@ -1,0 +1,17 @@
+.container-copyright {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+footer img {
+    height: 2vw;
+}
+
+@media(max-width: 790px) {
+
+    footer img {
+        height: 4vh;
+    }
+
+}

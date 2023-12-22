@@ -1,0 +1,16 @@
+{
+    "name": "administrator/alphacode-backend",
+    "autoload": {
+        "psr-4": {
+            "Administrator\\AlphacodeBackend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Oswaldo Barbosa"
+        }
+    ],
+    "require": {
+        "slim/slim": "3.*"
+    }
+}

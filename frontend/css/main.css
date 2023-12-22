@@ -1,0 +1,250 @@
+.form {
+    min-height: 40vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+div.container-input {
+    width: 63%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+div.container-input label {
+    font-size: 1.2rem;
+    color: var(--third-color);
+    transition: 0.5s;
+}
+
+div.container-input .container-input__input {
+    border: 0;
+    border-bottom: 2px solid var(--third-color);
+    outline: 0;
+    color: #000000;
+    padding: 5px;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+
+div.container-input .container-input__input:focus,
+div.container-input .container-input__input:valid {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+div.container-input .container-input__input:focus~label,
+div.container-input .container-input__input:valid~label {
+    color: var(--primary-color);
+}
+
+.container-checkbox {
+    width: 100%;
+    min-height: 10vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.container-checkbox__item {
+    width: 63%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container-checkbox__item input {
+    width: 1vw;
+    height: 1vw;
+}
+
+.container-checkbox__item span {
+    font-size: 1.2rem;
+}
+
+.container-register {
+    width: 91%;
+    min-height: 10vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.container-register button {
+    width: 11vw;
+    height: 6vh;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-color: #56b2df;
+    color: var(--second-color);
+}
+
+.form-modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-input-modal {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 24px;
+}
+
+.container-input-modal label {
+    font-size: 1.2rem;
+    color: var(--third-color);
+    transition: 0.5s;
+}
+
+.container-input-modal .container-input__input {
+    border: 0;
+    border-bottom: 2px solid var(--third-color);
+    outline: 0;
+    color: #000000;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.container-input-modal .container-input__input:focus,
+.container-input-modal .container-input__input:valid {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.container-input-modal .container-input__input:focus~label,
+.container-input-modal .container-input__input:valid~label {
+    color: var(--primary-color);
+}
+
+.container-checkbox-modal {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+    padding-top: 24px;
+}
+
+.container-checkbox-modal__item span {
+    font-size: 1rem;
+}
+
+.container-table {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: .5px solid var(--third-color);
+    padding: 64px;
+}
+
+table {
+    width: 87%;
+    height: 90%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: var(--second-color);
+}
+
+.header-table {
+    height: 5vh;
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+.header-table th {
+    font-size: 1.2rem;
+}
+
+.body-table {
+    width: 100px;
+    text-align: center;
+    border-top: .1px solid var(--third-color);
+    color: #000000;
+}
+
+td {
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.actions img {
+    height: 2.8vh;
+    cursor: pointer;
+}
+
+@media(max-width: 790px) {
+
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+        padding: 24px;
+    }
+
+    div.container-input {
+        width: 90%;
+    }
+
+    .container-checkbox {
+        width: 100%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        padding: 42px;
+        gap: 2rem;
+    }
+
+    .container-checkbox__item input {
+        width: 5vh;
+        height: 5vh;
+    }
+
+    .container-checkbox__item span {
+        font-size: 4vw;
+    }
+
+    .container-register {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-register button {
+        width: 52vw;
+        height: 8vh;
+    }
+
+    .header-table th {
+        font-size: .6rem;
+    }
+
+    td {
+        font-size: .5rem;
+        padding: 2px;
+    }
+
+    .actions {
+        gap: 1px;
+    }
+
+    .actions img {
+        height: 2vh;
+    }
+
+}
