@@ -19,7 +19,7 @@ registerButton.addEventListener('click', () => {
     let checkboxEmail = document.getElementById('checkbox-email')
     let checkboxSms = document.getElementById('checkbox-sms')
 
-    if (checkboxEmail.checked) {
+    if (checkboxWhatsapp.checked) {
         checkboxWhatsapp = 1
     } else {
         checkboxWhatsapp = 0
