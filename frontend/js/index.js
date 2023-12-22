@@ -5,8 +5,6 @@ import { createContacts, deleteContacts, getAllContacts, updateContacts } from "
 $("#telephone, #telephone-edit").mask("(00) 0000-0000");
 $("#cellphone, #cellphone-edit").mask("(00) 00000-0000");
 
-const contato = await getAllContacts()
-
 const registerButton = document.getElementById('register-button')
 
 registerButton.addEventListener('click', () => {
@@ -98,6 +96,8 @@ const formatDate = (date) => {
 
 }
 
+const contato = await getAllContacts()
+
 const getContatos = (contato) => {
 
     const bodyTable = document.createElement('tr')
@@ -119,7 +119,7 @@ const getContatos = (contato) => {
     containerActions.classList.add('actions')
 
     const editContact = document.createElement('img')
-    editContact.src = '../img/editar.png'
+    editContact.src = './img/editar.png'
     editContact.alt = 'Imagem editar'
     editContact.setAttribute("data-bs-toggle", "modal")
     editContact.setAttribute("data-bs-target", "#editModal")
@@ -217,8 +217,8 @@ const getContatos = (contato) => {
     })
 
     const exludeContact = document.createElement('img')
-    exludeContact.src = '../img/excluir.png'
-    exludeContact.alt = 'Imagem editar'
+    exludeContact.src = './img/excluir.png'
+    exludeContact.alt = 'Imagem excluir'
     exludeContact.setAttribute("data-bs-toggle", "modal")
     exludeContact.setAttribute("data-bs-target", "#excludeModal")
     exludeContact.addEventListener('click', () => {

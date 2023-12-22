@@ -26,7 +26,7 @@ class ComposerStaticInit7810d0e62c95ce543d23347f84f1408d
         ),
         'A' => 
         array (
-            'Administrator\\AlphacodeBackend\\' => 31,
+            'Administrator\\Backend\\' => 22,
         ),
     );
 
@@ -47,7 +47,7 @@ class ComposerStaticInit7810d0e62c95ce543d23347f84f1408d
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
-        'Administrator\\AlphacodeBackend\\' => 
+        'Administrator\\Backend\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
