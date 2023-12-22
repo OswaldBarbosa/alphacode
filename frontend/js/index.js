@@ -154,26 +154,26 @@ const getContatos = (contato) => {
             checkboxSms.checked = true
         }
 
-        if (checkboxWhatsapp.checked) {
-            checkboxWhatsapp = 1
-        } else {
-            checkboxWhatsapp = 0
-        }
-
-        if (checkboxEmail.checked) {
-            checkboxEmail = 1
-        } else {
-            checkboxEmail = 0
-        }
-
-        if (checkboxSms.checked) {
-            checkboxSms = 1
-        } else {
-            checkboxSms = 0
-        }
-
         const buttonEditModal = document.getElementById('buttonEditModal')
         buttonEditModal.addEventListener('click', () => {
+
+            if (checkboxWhatsapp.checked) {
+                checkboxWhatsapp = 1
+            } else {
+                checkboxWhatsapp = 0
+            }
+
+            if (checkboxEmail.checked) {
+                checkboxEmail = 1
+            } else {
+                checkboxEmail = 0
+            }
+
+            if (checkboxSms.checked) {
+                checkboxSms = 1
+            } else {
+                checkboxSms = 0
+            }
 
             if (name.value == "" || name.value == null || dateOfBirth.value == "" || dateOfBirth.value == null || email.value == "" || email.value == null ||
                 profession.value == "" || profession.value == null || telephone.value == "" || telephone.value == null || cellPhone.value == "" || cellPhone.value == null) {
@@ -226,7 +226,7 @@ const getContatos = (contato) => {
         const buttonExcludeModal = document.getElementById('buttonExcludeModal')
         buttonExcludeModal.addEventListener('click', () => {
             deleteContacts(contato.id)
-            
+
             Swal.fire({
                 icon: "success",
                 title: "Contato excluído com sucesso!",

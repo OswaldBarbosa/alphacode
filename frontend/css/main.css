@@ -117,12 +117,12 @@ div.container-input .container-input__input:valid~label {
 
 .container-input-modal .container-input__input:focus,
 .container-input-modal .container-input__input:valid {
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--third-color);
 }
 
 .container-input-modal .container-input__input:focus~label,
 .container-input-modal .container-input__input:valid~label {
-    color: var(--primary-color);
+    color: var(--third-color);
 }
 
 .container-checkbox-modal {
